@@ -5,6 +5,104 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Edit Post</title>
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+
+    <!-- Use font Rubik -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
+
+    <!-- Internal CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/post-detail.css" />
+    <link rel="stylesheet" href="css/add-edit-post.css" />
   </head>
-  <body></body>
+
+  <body>
+    <header>
+      <!-- Please note that we nead the header to maintain 3 columns in header -->
+      <!-- Navigation start-->
+      <nav class="top-nav shadow-sm py-3">
+        <div class="container">
+          <div class="nav justify-content-between align-items-center">
+            <li class="nav-item">
+              <a href="" class="nav-link">
+                <img class="nav__logo" src="/images/logo.svg" alt="" />
+              </a>
+            </li>
+          </div>
+        </div>
+      </nav>
+      <!-- Navigation end -->
+    </header>
+    <section class="hero" id="postHeroImage"></section>
+
+    <section class="post-detail">
+      <div class="container">
+        <div class="post-detail-main">
+          <div class="post-title-wrapper">
+            <h1 id="postDeatilTitle">Add edit a post</h1>
+            <p>
+              <samll class="text-muted"
+                >Please enter the following information then submit the content</samll
+              >
+            </p>
+          </div>
+
+          <form id="postForm" class="post-form">
+            <div class="form-group">
+              <label for="postTitle">Title</label>
+              <input type="text" name="title" class="form-control" placeholder="Learn JS is fun" />
+              <div class="invalid-feedback">
+                Ooops! Please write a nice titile for your post &gt;&lt;
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="postAuthor">Author</label>
+              <input type="text" class="form-control" name="author" placeholder="Eg: Huy Doan" />
+              <div class="invalid-feedback">Please enter author of this post!</div>
+            </div>
+
+            <div class="form-group">
+              <label for="postDescription">Description</label>
+              <textarea name="description" cols="3" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="postChangeImage">Image</label>
+              <small id="passwordHelpBlock" class="text-muted form-text"
+                >We're using <a href="https://picsum.photos">Picsum service</a> to get a random
+                image.
+              </small>
+              <button type="button" class="btn btn-dark">Change post image</button>
+            </div>
+
+            <div class="text-center">
+              <button class="btn btn-primary"><i class="fas fa-save mr-1"></i>Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center text-muted py-3">
+      <small>Copy and modify by Don <i class="fas fa-heart"></i></small>
+    </footer>
+  </body>
 </html>

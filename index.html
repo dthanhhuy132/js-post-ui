@@ -4,10 +4,126 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Post UI by Huy</title>
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+
+    <!-- bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+
+    <!-- Use font Rubik -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
+
+    <!-- internal css -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/home.css" />
   </head>
+
   <body>
-    <div id="app"></div>
+    <!-- Template HTML for post item start -->
+    <!-- Template HTML for post item end -->
+    <header>
+      <!-- Navigation start-->
+      <nav class="top-nav shadow-sm py-3">
+        <div class="container">
+          <div class="nav justify-content-between align-items-center">
+            <li class="nav-item">
+              <a href="" class="nav-link">
+                <img class="nav__logo" src="/images/logo.svg" alt="" />
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="add-edit-post.html" class="nav-link"
+                ><i class="fas fa-plus-circle mr-1"></i>Add new post
+              </a>
+            </li>
+          </div>
+        </div>
+      </nav>
+      <!-- Navigation end -->
+    </header>
+
+    <main>
+      <section class="posts-section">
+        <div class="container">
+          <h1 class="with-underline text-center">Latest-posts</h1>
+
+          <!-- Post list start-->
+          <ul id="postList" class="row posts-list justify-content-center">
+            <li class="col-12 col-md-6 col-lg-4">
+              <div class="post-item mb-4">
+                <div class="card">
+                  <img
+                    src="./images/recipe.jpg"
+                    alt="recipe"
+                    class="card-img-top"
+                    onerror="this.onerror=null;this.src='https://picsum.photos/1368/400';"
+                  />
+
+                  <div class="card-body">
+                    <h5 class="card-titile">Card title</h5>
+                    <p class="card-text">
+                      This is a wider card with supporting text below as a natural lead-in to
+                      additional content. This content is a little bit longer.
+                    </p>
+
+                    <p class="card-text">
+                      <small class="text-muted">by</small>
+                      <small class="text-muted font-weight-bold">Huy Doan</small>
+                      <small class="text-muted">- 3 mins ago</small>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="post-item-menu">
+                  <div class="menu-item">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                  <div class="menu-item">
+                    <i class="fas fa-trash"></i>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <!-- posts pagination -->
+
+          <nav class="posts-nav">
+            <ul id="postsPagination" class="pagination justify-content-center">
+              <li class="page-item">
+                <a href="#" class="page-link"><span>&laquo;</span></a>
+              </li>
+              <li class="page-item"><a href="#" class="page-link">1</a></li>
+              <li class="page-item"><a href="#" class="page-link">2</a></li>
+              <li class="page-item"><a href="#" class="page-link">3</a></li>
+              <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+            </ul>
+          </nav>
+
+          <!-- Post list end -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-center text-muted py-3">
+      <small>Copy and modify by Don <i class="fas fa-heart"></i></small>
+    </footer>
+
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
