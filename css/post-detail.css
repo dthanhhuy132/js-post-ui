@@ -20,4 +20,26 @@ section.hero {
 .post-detail .post-image {
   width: 100%;
   margin-bottom: 1rem;
+  object-fit: cover;  
+}
+
+.post-detail .post-image:hover {
+  cursor: pointer;
+}
+
+.post-content-wrapper p {
+  text-align: justify;
+}
+
+.btn {
+  min-width: 100px;
+}
+
+.modal-dth {
+  overflow-y: hidden;
+}
+
+.modal-dialog-dth {
+  height: 90vh;
+  max-width: 70%;
 }

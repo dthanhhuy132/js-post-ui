@@ -50,6 +50,7 @@
   background-color: #444;
 
   border-radius: 50%;
+  border: 1px solid rgb(177, 173, 173);
   opacity: 0.7;
 }
 
@@ -57,6 +58,8 @@
   color: #fff;
   background-color: #111;
   opacity: 1;
+  border: 1px solid fff;
+
 }
 
 
@@ -79,6 +82,47 @@
   outline: none;
 }
 
+.posts-nav .page-item.active {
+  color: var(--primary-color)
+}
+
+.posts-nav .page-item .page-link:focus, .posts-nav .page-item .page-link:active,.posts-nav .page-item .page-link:active,
+.posts-nav .page-item:focus, .posts-nav .page-item:active,.posts-nav .page-item:hover {
+  outline: none !important;
+  background: none;
+  box-shadow: none !important;
+  
+}
+
+.posts-nav .active-page{
+  color: var(--primary-color) !important
+}
+
+.posts-nav .disabled {
+  pointer-events: none;
+}
+
+
+
 .posts-nav .page-item:not(.active) .page-link:hover {
   color: var(--primary-color)
+}
+
+
+.btn-custom {
+  min-width: 80px !important
+}
+
+
+.fade-scale {
+  transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all .25s linear;
+  -o-transition: all .25s linear;
+  transition: all .25s linear;
+}
+
+.fade-scale.show {
+  opacity: 1;
+  transform: scale(1);
 }
