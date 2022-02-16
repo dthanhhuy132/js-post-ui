@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://js-post-api.herokuapp.com/api';
+const baseURL = 'https://js-post-api.herokuapp.com/api';
 
 const axiosClient = axios.create({
   baseURL: baseURL,
