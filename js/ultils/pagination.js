@@ -114,8 +114,9 @@ export function renderPagination(elementId, pagination) {
 (() => {
   const URLParam = new URLSearchParams(window.location.search);
   const url = new URL(window.location);
+  let isHomepage = url.href.indexOf('index.html') > -1;
 
-  if (url.href.indexOf('_page') > -1) {
+  if (isHomepage) {
     const _page = URLParam.get('_page');
 
     const numberPageList = document.querySelectorAll(
