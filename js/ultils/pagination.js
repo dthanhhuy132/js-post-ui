@@ -114,11 +114,12 @@ export function renderPagination(elementId, pagination) {
 (() => {
   const URLParam = new URLSearchParams(window.location.search);
   const url = new URL(window.location);
-  let isHomepage = url.href.indexOf('index.html') > -1;
 
-  if (isHomepage) {
-    const _page = URLParam.get('_page');
+  const isHomepage = url.pathname === '/';
 
+  const _page = URLParam.get('_page');
+
+  if (_page || isHomepage) {
     const numberPageList = document.querySelectorAll(
       '#pagination  li:not(:first-child):not(:last-child)'
     );
