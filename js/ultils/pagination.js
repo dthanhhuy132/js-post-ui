@@ -113,12 +113,16 @@ export function renderPagination(elementId, pagination) {
 
 (() => {
   const URLParam = new URLSearchParams(window.location.search);
-  const _page = URLParam.get('_page');
+  const url = new URL(window.location);
 
-  const numberPageList = document.querySelectorAll(
-    '#pagination  li:not(:first-child):not(:last-child)'
-  );
-  const lastPage = numberPageList[numberPageList.length - 1].innerText;
-  if (lastPage < _page) setIncreasePageNumber(numberPageList, _page - lastPage);
-  setPageNumberActive(numberPageList, _page);
+  if (url.href.indexOf('_page') > -1) {
+    const _page = URLParam.get('_page');
+
+    const numberPageList = document.querySelectorAll(
+      '#pagination  li:not(:first-child):not(:last-child)'
+    );
+    const lastPage = numberPageList[numberPageList.length - 1].innerText;
+    if (lastPage < _page) setIncreasePageNumber(numberPageList, _page - lastPage);
+    setPageNumberActive(numberPageList, _page);
+  }
 })();

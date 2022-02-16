@@ -4,9 +4,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "DISABLE_ESLINT_PLUGIN=true vite",
-    "build": "DISABLE_ESLINT_PLUGIN=true vite build",
-    "preview": "DISABLE_ESLINT_PLUGIN=true vite preview"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "vite": "^2.7.1"
