@@ -119,6 +119,6 @@ export function renderPagination(elementId, pagination) {
     '#pagination  li:not(:first-child):not(:last-child)'
   );
   const lastPage = numberPageList[numberPageList.length - 1].innerText;
-  setIncreasePageNumber(numberPageList, _page - lastPage);
+  if (lastPage < _page) setIncreasePageNumber(numberPageList, _page - lastPage);
   setPageNumberActive(numberPageList, _page);
 })();
