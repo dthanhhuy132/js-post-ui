@@ -115,7 +115,7 @@ export function renderPagination(elementId, pagination) {
   const URLParam = new URLSearchParams(window.location.search);
   const url = new URL(window.location);
 
-  const isHomepage = url.pathname === '/' || url.pathname === 'index.html';
+  const isHomepage = url.pathname === '/' || url.pathname === '/index.html';
 
   const _page = URLParam.get('_page');
 
