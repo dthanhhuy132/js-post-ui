@@ -45,7 +45,11 @@ export function creatPostElement(post) {
           keyboard: false,
         });
         myModal.show();
+        const postUrl = `<a href=/post-detail.html?id=${post.id} style="color: blue; text-decoration:none">${post.title}</a>`;
 
+        myModal._element.querySelector(
+          '.modal-body'
+        ).innerHTML = `Are you sure to romove post: ${postUrl}`;
         const customEvent = new CustomEvent('post-delete', {
           bubbles: true,
           detail: { post, myModal },

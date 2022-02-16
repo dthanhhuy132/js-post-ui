@@ -36,9 +36,9 @@ function handleRemovePost() {
           toast.success('Delete post successfully!!!');
           myModal.hide();
 
-          await handleFilterChange();
+          handleFilterChange();
         } catch (error) {
-          toast.error(error.message);
+          // toast.error(error.message);
           myModal.hide();
         }
       });

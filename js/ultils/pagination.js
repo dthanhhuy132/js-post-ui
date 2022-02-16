@@ -1,20 +1,24 @@
-function setIncreasePageNumber(numberPageList) {
+function setIncreasePageNumber(numberPageList, increaseNumber) {
+  if (!increaseNumber) increaseNumber = 1;
   numberPageList.forEach((numberPage) => {
     let numberPageLink = numberPage.firstElementChild;
     const numberPageValue = Number.parseInt(numberPageLink.innerText);
-    numberPageLink.innerText = numberPageValue + 1;
+    numberPageLink.innerText = numberPageValue + increaseNumber;
   });
 }
 
-function setDecreasePageNumber(numberPageList) {
+function setDecreasePageNumber(numberPageList, decreaseNumber) {
+  if (!decreaseNumber) decreaseNumber = 1;
   numberPageList.forEach((numberPage) => {
     let numberPageLink = numberPage.firstElementChild;
     const numberPageValue = Number.parseInt(numberPageLink.innerText);
-    numberPageLink.innerText = numberPageValue - 1;
+    numberPageLink.innerText = numberPageValue - decreaseNumber;
   });
 }
 
 function setPageNumberActive(numberPageList, numberPageValue) {
+  if (!numberPageValue) numberPageValue = 1;
+
   numberPageList.forEach((numberPage) => {
     if (numberPage.innerText == numberPageValue) {
       numberPage?.firstElementChild.classList.add('active-page');
@@ -106,3 +110,15 @@ export function renderPagination(elementId, pagination) {
   if (_page >= totalPages) ulElement.lastElementChild?.classList.add('disabled');
   else ulElement.lastElementChild?.classList.remove('disabled');
 }
+
+(() => {
+  const URLParam = new URLSearchParams(window.location.search);
+  const _page = URLParam.get('_page');
+
+  const numberPageList = document.querySelectorAll(
+    '#pagination  li:not(:first-child):not(:last-child)'
+  );
+  const lastPage = numberPageList[numberPageList.length - 1].innerText;
+  setIncreasePageNumber(numberPageList, _page - lastPage);
+  setPageNumberActive(numberPageList, _page);
+})();
