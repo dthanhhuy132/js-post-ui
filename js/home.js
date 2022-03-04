@@ -18,6 +18,7 @@ async function handleFilterChange(filterName, filterValue) {
 
     renderPostList(data);
     renderPagination('pagination', pagination);
+    window.scrollTo(0, 0);
   } catch (error) {
     console.log('fail to load new post', error);
   }
